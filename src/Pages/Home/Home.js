@@ -27,8 +27,8 @@ function Home() {
            <h2>Post List</h2>
            <Grid container justify="center" spacing={4} width="100%">
                 {post.map((posts, index) => (
-                    <Grid key={index} xs={12} sm={6} md={4} lg={3}>
-                       <Link style={{textDecoration:"none"}} to={`/detailproducts/${index}`}>
+                    <Grid key={posts.id} xs={12} sm={6} md={4} lg={3}>
+                       <Link style={{textDecoration:"none"}} to={`/detail/${posts.id}`}>
                            <PostList post={posts}/>
                        </Link>
                     </Grid>
