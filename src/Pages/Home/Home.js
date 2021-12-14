@@ -16,7 +16,7 @@ function Home() {
             .get(`https://jsonplaceholder.typicode.com/posts`)
             .then((response) => {
                 setPost(response.data)
-                localStorage.setItem("db", JSON.stringify(response.data))
+                localStorage.setItem("postdb", JSON.stringify(response.data))
                 setLoading(false)
                 console.log(post, "test product")
             },)
@@ -25,10 +25,10 @@ function Home() {
     return (
        <main>
            <h2>Post List</h2>
-           <Grid container justify="center" spacing={4} width="100%">
+           <Grid container justify="center" spacing={5} width="100%">
                 {post.map((posts, index) => (
-                    <Grid key={posts.id} xs={12} sm={6} md={4} lg={3}>
-                       <Link style={{textDecoration:"none"}} to={`/detail/${posts.id}`}>
+                    <Grid key={index} xs={12} sm={6} md={4} lg={3}>
+                       <Link style={{textDecoration:"none"}} to={`/detail/${index}`}>
                            <PostList post={posts}/>
                        </Link>
                     </Grid>

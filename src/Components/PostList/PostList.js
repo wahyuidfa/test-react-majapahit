@@ -3,15 +3,18 @@ import { Card, CardActions, CardContent, CardMedia, Typography } from "@mui/mate
 import useStyles from "./styles"
 
 function PostList({post}) {
-    const styles = useStyles()
+    const classes = useStyles()
     return (
-       <Card elevation={3} classname={styles.root}>
+       <Card elevation={3} classname={classes.root}>
            <CardContent>
-               <div className={styles.cardContent}>
+               <div className={classes.cardContent}>
                    <Typography variant="p" fontSize={"18px"}>
                        {post.title}
                    </Typography>
                </div>
+               <Typography variant="p" fontSize="14px" color="textSecondary">
+                    {post.body}
+                </Typography>
            </CardContent>
        </Card>
     );
